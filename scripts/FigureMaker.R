@@ -184,6 +184,13 @@ pdf("ZR_Topic_8_13_FeaturePlot.pdf")
 FeaturePlot(Seurat_object, reduction = "umap", features = c("Topic_8", "Topic_13"), blend = T, cols = c("orange","purple"))[[3]]
 dev.off()
 
+# Figure 2G RidgePlot
+
+subSeurat_object <- subset(SO, hash.ID %in% c("ZR-CTL", "ZR-E-48"))
+
+ggplot(data=subSeurat_object@meta.data, aes(x=Topic_of_Choice, fill = hash.ID)) + geom_density(alpha = 0.5) + 
+  scale_fill_manual(values=brewer.pal(n=2, name = 'Pastel1')[c(1,2)]) + theme_bw()
+
 Seurat_object <- readRDS("newE2_MCF7.rds")
 LDA_model <- readRDS("Model_newMCF7_E2_20T_CLR_5000Variable_M10.rds")
 
@@ -264,6 +271,14 @@ pdf("MCF7_Topic_8_2_FeaturePlot.pdf")
 FeaturePlot(Seurat_object, reduction = "umap", features = c("Topic_8", "Topic_2"), blend = T, cols = c("orange","purple"))[[3]]
 dev.off()
 
+# Figure 2G RidgePlot
+
+subSeurat_object <- subset(SO, hash.ID %in% c("M7-CTL", "M7-E-48"))
+
+ggplot(data=subSeurat_object@meta.data, aes(x=Topic_of_Choice, fill = hash.ID)) + geom_density(alpha = 0.5) + 
+  scale_fill_manual(values=brewer.pal(n=2, name = 'Pastel1')[c(1,2)]) + theme_bw()
+
+
 Seurat_object <- readRDS("E2_T47D.rds")
 LDA_model <- readRDS("Model_T47D_20T_CLR_5000Variable_M10.rds")
 
@@ -323,6 +338,13 @@ dev.off()
 pdf("T47D_Topic_20_4_FeaturePlot.pdf")
 FeaturePlot(Seurat_object, reduction = "umap", features = c("Topic_20", "Topic_4"), blend = T, cols = c("orange","purple"))[[3]]
 dev.off()
+
+# Figure 2G RidgePlot
+
+subSeurat_object <- subset(SO, hash.ID %in% c("TD-CTL", "TD-E-48"))
+
+ggplot(data=subSeurat_object@meta.data, aes(x=Topic_of_Choice, fill = hash.ID)) + geom_density(alpha = 0.5) + 
+  scale_fill_manual(values=brewer.pal(n=2, name = 'Pastel1')[c(1,2)]) + theme_bw()
 
 
 clone_SO <- readRDS("clones_MCF7.rds")
