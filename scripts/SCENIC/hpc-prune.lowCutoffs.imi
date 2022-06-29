@@ -1,0 +1,14 @@
+[parameters]
+mode=dask_multiprocessing
+output=/home/groups/CEDAR/doe/projects/LDA/SCENIC_prac/regulons_MCF7_E2.csv
+chunk_size=100
+nes_threshold=1.0
+auc_threshold=0.05
+rank_threshold=2000
+debug=True
+min_genes=20
+
+[data]
+databases=/home/groups/CEDAR/doe/projects/LDA/SCENIC_prac/hg38__refseq-r80__10kb_up_and_down_tss.mc9nr.feather;/home/groups/CEDAR/doe/projects/LDA/SCENIC_prac/hg38__refseq-r80__500bp_up_and_100bp_down_tss.mc9nr.feather
+motif_annotations=/home/groups/CEDAR/doe/projects/LDA/SCENIC_prac/motifs-v9-nr.hgnc-m0.001-o0.0.tbl
+modules=/home/groups/CEDAR/doe/projects/LDA/SCENIC_prac/module_output.pickle

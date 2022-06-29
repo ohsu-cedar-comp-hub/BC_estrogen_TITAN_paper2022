@@ -1,0 +1,11 @@
+They pyscenic_script.py file gives a basic skeleton for how the pipeline is ran, but I jumped in and out of that script during analysis due to other scripts having better computational performance.
+
+The first lines in the script that are left uncommented are really just to make sure it is all installed properly and everything is in the right place.
+
+Then, the first group of commented out lines involve running grnboost. This is where I first jump out of the script and run arboreto_pyscenic.sh. This script runs the same command, but through bash rather than R and is a lot more efficient. It outputs the adjacencies file called adj.tsv
+
+This adjacencies file can then be loaded into the python script, and then in the python script, the modules are built using the modules_from_adjacencies function.
+
+Then I output those modules using pickle.dump and leave the python script again. Instead of running the prune step in python I use the prune_bash.sh script which takes in a .imi file as input which gives it all the necessary inputs such as locations of the modules and databases.
+
+I then load the pruned output back into python and run the rest of the python script to get the desired outputs.
