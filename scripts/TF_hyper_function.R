@@ -26,7 +26,7 @@ TFPhyper <- function(GeneListTopic, Gene) {
 }
 for (i in 1:length(colnames(ModelList))) {
   print(colnames(ModelList)[i])
-  PValues <-  mclapply(TFs$Genes, FUN = function(x) {TFPhyper(GeneListTopic = ModelList[,colnames(ModelList)[i]], Gene = x)}, mc.cores = 4)
+  PValues <-  mclapply(Genes, FUN = function(x) {TFPhyper(GeneListTopic = ModelList[,colnames(ModelList)[i]], Gene = x)}, mc.cores = 4)
   TFs$Pvalue.Tmp <-unlist(PValues)
   colnames(TFs)[ncol(TFs)] <- paste0(colnames(ModelList)[i], "PValue", sep = "_")
 }
