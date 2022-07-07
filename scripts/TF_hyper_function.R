@@ -7,7 +7,7 @@ MCF7 <- factors %>% filter(Cell_line == "MCF-7")
 T47D <- factors %>% filter(Cell_line == "T47D")
 ZR751 <- factors %>% filter(Cell_line == "ZR-75-1")
 TFs <- rbind(ZR751, T47D, MCF7)
-Genes <- readRDS("Genes_top2000.RDS") #This is the entire geneset inputted into the topic model (e.g. top 2000 variable genes in the dataset)
+Genes <- readRDS("Genes_top2000.RDS") #This is the geneset from cistromeDB defining the various TFs
 Genes <- unlist(Genes)
 TFs <- TFs[-1*which(Genes == "error"),]
 Genes <- Genes[-1*which(Genes == "error")]
